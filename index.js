@@ -10,13 +10,14 @@ function destructivelyUpdateEmployeeWithKeyAndValue(employee, key, value){
 }
 
 function deleteFromEmployeeByKey(employee, key){
-    return {...employee, ...{[key]:value}}
+    const newEmployee = Object.assign({}, employee)
+    delete newEmployee[key]
+    return newEmployee
     
 }
 
-const value = [key.delete]
 
 function destructivelyDeleteFromEmployeeByKey(employee, key){
-    employee[key] = value
-    return {...employee, ...{[key]:value}}
+   delete employee[key] 
+    return employee
 }
